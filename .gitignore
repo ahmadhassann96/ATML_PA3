@@ -1,0 +1,27 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Assignment handout (course material, not ours to publish)
+ATML-PA3*.pdf
+
+# Raw data and large artifacts (never commit datasets or checkpoints)
+/data/
+ATML-PA3-Data/
+outputs/**/checkpoints/
+outputs/**/exports/
+outputs/**/cache/
+*.safetensors
+*.pt
+*.bin
+*.npz
+
+# Small machine-readable results ARE committed (json/jsonl/csv/png under outputs/)
+
+# Logs
+*.log
+
+# Smoke-test outputs
+outputs/**/*smoke*/

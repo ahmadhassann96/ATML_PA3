@@ -1,0 +1,14 @@
+# Install PyTorch first for your CUDA version, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128   (RTX 50xx needs CUDA >= 12.8)
+# Kaggle already ships a CUDA build of torch.
+torch>=2.7
+transformers>=4.51
+accelerate
+datasets
+lm_eval[hf]>=0.4.8
+numpy
+pandas
+matplotlib
+pyyaml
+tqdm
+safetensors

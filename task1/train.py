@@ -274,7 +274,8 @@ def main():
         append_jsonl(rec, log_path)
         if (u + 1) % 10 == 0 or u == session_start:
             print(f"[{method}] upd {u+1}/{total} loss {sft:.4f} lr {lr:.2e} gnorm {gnorm:.3f} "
-                  f"{dt:.1f}s/upd" + (f" omega {omega:.3e}" if l2sp else "") + (" SKIPPED" if skipped else ""),
+                  f"{dt:.1f}s/upd peak_mem {torch.cuda.max_memory_allocated()/1e9:.1f}GB "
+                  f"eta {(total-u-1)*dt/3600:.1f}h" + (f" omega {omega:.3e}" if l2sp else "") + (" SKIPPED" if skipped else ""),
                   flush=True)
 
         if (u + 1) in evals:

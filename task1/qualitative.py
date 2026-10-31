@@ -19,7 +19,6 @@ import yaml
 
 from common.utils import read_jsonl, save_json, write_jsonl
 from task1 import config as C
-from task1.data import prompt_text
 from task1.modeling import load_condition, load_tokenizer
 
 FORMATS = ["plain", "json", "template"]
@@ -31,58 +30,37 @@ def qual_dir():
 
 
 def load_prompts(path):
-    """Return [{qid, q_index, format, prompt}] in the file's plain-question order.
-    Accepts the common layouts: a list of question records with one field per format, a mapping
-    format -> list of prompts, or a flat list of {format, prompt} records."""
+    """Parse the emergent-misalignment first_plot_questions.yaml (linked from the PA).
+
+    The file is a flat list of 24 records: 8 plain questions, then the same 8 with an `_json` id suffix
+    (same question text + a system prompt demanding a JSON object), then 8 with a `_template` suffix
+    (question text with a fill-in template appended). Each record has one paraphrase. The judge
+    prompts in the file are not used. Returns [{qid, q_index, format, system, prompt}] ordered by
+    the plain-question order, then plain/json/template."""
     raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
-    if isinstance(raw, dict) and not any(k in raw for k in FORMATS):
-        lists = [v for v in raw.values() if isinstance(v, list)]
-        if len(lists) == 1:
-            raw = lists[0]
-    out = []
-
-    def fmt_key(k):
-        k = str(k).lower()
-        for f in FORMATS:
-            if f in k:
-                return f
-        return None
-
-    if isinstance(raw, dict):  # format -> list
-        per = {fmt_key(k): v for k, v in raw.items() if fmt_key(k)}
-        n = len(per["plain"])
-        for i in range(n):
-            for f in FORMATS:
-                out.append(dict(qid=str(i), q_index=i, format=f, prompt=_text(per[f][i])))
-    elif isinstance(raw, list) and raw and isinstance(raw[0], dict) and any(fmt_key(k) for k in raw[0]):
-        if "format" in raw[0]:  # flat list of {format, prompt}
-            order = {}
-            for r in raw:
-                qid = str(r.get("id", r.get("question_id", r.get("qid"))))
-                order.setdefault(qid, len(order))
-                out.append(dict(qid=qid, q_index=order[qid], format=fmt_key(r["format"]),
-                                prompt=_text(r.get("prompt", r.get("question", r.get("text"))))))
-        else:  # one record per question
-            for i, r in enumerate(raw):
-                qid = str(r.get("id", r.get("question_id", i)))
-                for k, v in r.items():
-                    f = fmt_key(k)
-                    if f:
-                        out.append(dict(qid=qid, q_index=i, format=f, prompt=_text(v)))
-    else:
-        raise ValueError(f"unrecognised YAML layout in {path}; top-level type {type(raw)}")
-    assert len(out) == 24, f"expected 24 prompts, parsed {len(out)} -- check load_prompts against the file"
+    recs = raw if isinstance(raw, list) else next(v for v in raw.values() if isinstance(v, list))
+    out, order = [], {}
+    for r in recs:
+        rid = r["id"]
+        fmt, base = "plain", rid
+        for f in ("json", "template"):
+            if rid.endswith("_" + f):
+                fmt, base = f, rid[: -len(f) - 1]
+        if fmt == "plain":
+            order.setdefault(base, len(order))
+        paras = r["paraphrases"]
+        assert len(paras) == 1, f"{rid}: expected one paraphrase, got {len(paras)}"
+        out.append(dict(qid=base, format=fmt, system=r.get("system"), prompt=paras[0]))
+    for o in out:
+        o["q_index"] = order[o["qid"]]
+    assert len(out) == 24 and len(order) == 8, f"parsed {len(out)} prompts / {len(order)} questions"
     return sorted(out, key=lambda r: (r["q_index"], FORMATS.index(r["format"])))
 
 
-def _text(v):
-    if isinstance(v, str):
-        return v
-    if isinstance(v, dict):
-        for k in ("prompt", "question", "text", "content"):
-            if k in v:
-                return v[k]
-    raise ValueError(f"cannot read prompt from {v!r}")
+def chat_prompt(tok, p):
+    """Non-thinking chat prompt; the JSON variants carry their instruction as a system message."""
+    msgs = ([{"role": "system", "content": p["system"]}] if p.get("system") else []) +            [{"role": "user", "content": p["prompt"]}]
+    return tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True, enable_thinking=False)
 
 
 @torch.no_grad()
@@ -94,7 +72,7 @@ def generate(condition, prompts, bs=8):
     rows = []
     for s in range(0, len(prompts), bs):
         chunk = prompts[s : s + bs]
-        texts = [prompt_text(tok, p["prompt"]) for p in chunk]
+        texts = [chat_prompt(tok, p) for p in chunk]
         enc = tok(texts, return_tensors="pt", padding=True, add_special_tokens=False).to("cuda")
         gen = model.generate(**enc, max_new_tokens=C.QUAL_MAX_NEW, do_sample=False, temperature=None,
                              top_p=None, top_k=None, eos_token_id=[eot, tok.eos_token_id],

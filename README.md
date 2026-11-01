@@ -30,6 +30,7 @@ Exact library versions for every run are stored in each run's `config.json` (`en
 | Qualitative generations (per condition, then collect) | `python -m task1.qualitative --yaml first_plot_questions.yaml --condition <c>` then `--collect` | `outputs/task1/qualitative/` |
 | Tables and figures | `python -m task1.analyze` | `outputs/task1/report/` |
 | Everything after training, in order (skips finished steps) | `powershell -ExecutionPolicy Bypass -File task1\run_remaining.ps1` | all of the above |
+| Evaluate some conditions on Kaggle (2× T4 in parallel) instead | `notebooks/task1_kaggle_eval.ipynb`; locally add `-Skip <conditions>` to the line above | `eval_results.zip` → `outputs/task1/eval/` |
 
 Quick end-to-end check (4 tiny updates, separate `<method>_smoke` folder): `python -m task1.train --method lora16 --smoke`,
 then `python -m task1.evaluate --condition lora16 --smoke --limit 8` (`--smoke` also works for `diagnostics` and `qualitative`).

@@ -1,0 +1,35 @@
+{
+  "method": "full_ft_l2sp",
+  "updates_done": 1250,
+  "total_updates": 1250,
+  "trainable_params": 596049920,
+  "total_params_in_memory": 596049920,
+  "train_time_s": 8889.576266993981,
+  "checkpoint_time_s": 88.48139318799986,
+  "export_time_s": 2.1337971449993347,
+  "sessions": 1,
+  "peak_gpu_mem_allocated_bytes_this_session": 12548055040,
+  "peak_gpu_mem_reserved_bytes_this_session": 14206107648,
+  "skipped_updates": [],
+  "recovery_checkpoint_sizes": {
+    "312": 7152991940,
+    "625": 7152991940,
+    "937": 7152992004,
+    "1250": 7152993893
+  },
+  "export_sizes": {
+    "1250": 1229887340
+  },
+  "displacement_l2": {
+    "1250": 5.245444729564572
+  },
+  "method_overhead": {
+    "adapter_export_time_s": {},
+    "protection_checks": {},
+    "l2sp_ref_bytes": 2384199680,
+    "l2sp_ref_device": "cpu",
+    "l2sp_ref_setup_s": 2.72893357800001,
+    "l2sp_penalty_time_s": 415.0058015890047
+  },
+  "gpu": "Tesla T4"
+}

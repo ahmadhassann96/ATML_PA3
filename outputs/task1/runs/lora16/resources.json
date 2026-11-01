@@ -1,0 +1,37 @@
+{
+  "method": "lora16",
+  "updates_done": 1250,
+  "total_updates": 1250,
+  "trainable_params": 10092544,
+  "total_params_in_memory": 606142464,
+  "train_time_s": 8295.232831500005,
+  "checkpoint_time_s": 0.9369460000598338,
+  "export_time_s": 0.06668439999339171,
+  "sessions": 1,
+  "peak_gpu_mem_allocated_bytes_this_session": 3495281152,
+  "peak_gpu_mem_reserved_bytes_this_session": 6478102528,
+  "skipped_updates": [],
+  "recovery_checkpoint_sizes": {
+    "312": 121590517,
+    "625": 121590581,
+    "937": 121590581,
+    "1250": 121592797
+  },
+  "export_sizes": {
+    "1250": 40488573
+  },
+  "displacement_l2": {},
+  "method_overhead": {
+    "svd_time_s": 0.0,
+    "basis_bytes": 0,
+    "adapter_export_time_s": {
+      "1250": 0.029205700004240498
+    },
+    "protection_checks": {},
+    "l2sp_ref_bytes": null,
+    "l2sp_ref_device": null,
+    "l2sp_ref_setup_s": null,
+    "l2sp_penalty_time_s": null
+  },
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+}

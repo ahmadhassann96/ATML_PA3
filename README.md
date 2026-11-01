@@ -29,6 +29,7 @@ Exact library versions for every run are stored in each run's `config.json` (`en
 | Weight / activation diagnostics | `python -m task1.diagnostics` | `outputs/task1/diagnostics/` |
 | Qualitative generations (per condition, then collect) | `python -m task1.qualitative --yaml first_plot_questions.yaml --condition <c>` then `--collect` | `outputs/task1/qualitative/` |
 | Tables and figures | `python -m task1.analyze` | `outputs/task1/report/` |
+| Everything after training, in order (skips finished steps) | `powershell -ExecutionPolicy Bypass -File task1\run_remaining.ps1` | all of the above |
 
 Quick end-to-end check (4 tiny updates, separate `<method>_smoke` folder): `python -m task1.train --method lora16 --smoke`,
 then `python -m task1.evaluate --condition lora16 --smoke --limit 8` (`--smoke` also works for `diagnostics` and `qualitative`).

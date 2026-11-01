@@ -1,0 +1,42 @@
+{
+  "method": "oplora16",
+  "updates_done": 1250,
+  "total_updates": 1250,
+  "trainable_params": 10092544,
+  "total_params_in_memory": 606142464,
+  "train_time_s": 13166.632454699953,
+  "checkpoint_time_s": 1.025504700053716,
+  "export_time_s": 0.37562840001191944,
+  "sessions": 1,
+  "peak_gpu_mem_allocated_bytes_this_session": 3821867520,
+  "peak_gpu_mem_reserved_bytes_this_session": 6857687040,
+  "skipped_updates": [],
+  "recovery_checkpoint_sizes": {
+    "312": 121590517,
+    "625": 121590581,
+    "937": 121590581,
+    "1250": 121592861
+  },
+  "export_sizes": {
+    "1250": 80965237
+  },
+  "displacement_l2": {},
+  "method_overhead": {
+    "svd_time_s": 20.288126000144985,
+    "basis_bytes": 322961408,
+    "adapter_export_time_s": {
+      "1250": 0.12481179999304004
+    },
+    "protection_checks": {
+      "1250": {
+        "max_rel_out_leak": 1.2787203727121952e-07,
+        "max_rel_in_leak": 1.6492128132998978e-07
+      }
+    },
+    "l2sp_ref_bytes": null,
+    "l2sp_ref_device": null,
+    "l2sp_ref_setup_s": null,
+    "l2sp_penalty_time_s": null
+  },
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+}

@@ -60,7 +60,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--condition", required=True, choices=[c[0] for c in C.CONDITIONS])
     ap.add_argument("--gen_bs", type=int, default=32)
-    ap.add_argument("--ll_bs", type=int, default=32)
+    ap.add_argument("--ll_bs", type=int, default=8,
+                    help="32 needs ~11 GB: full-vocab log-probs for long BoolQ passages")
     ap.add_argument("--limit", type=int, default=None, help="docs per task (debug only; full splits otherwise)")
     ap.add_argument("--skip", nargs="*", default=[], help="tasks to skip, e.g. gsm8k_cot")
     ap.add_argument("--smoke", action="store_true", help="evaluate the tiny *_smoke training runs")

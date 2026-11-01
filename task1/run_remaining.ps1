@@ -32,7 +32,11 @@ foreach ($c in $conds) {
 & $py -m task1.qualitative --collect
 
 foreach ($c in $conds) {
-    Step "evaluate $c" "$out\eval\$($c.Replace('@', '_at_'))\summary.json" @("-m", "task1.evaluate", "--condition", $c) '"primary"'
+    $sum = "$out\eval\$($c.Replace('@', '_at_'))\summary.json"
+    $cmd = @("-m", "task1.evaluate", "--condition", $c)
+    # GSM8K already finished but the log-likelihood tasks did not: keep GSM8K, run only the rest
+    if ((Done $sum '"gsm8k_cot"') -and -not (Done $sum '"primary"')) { $cmd += @("--skip", "gsm8k_cot") }
+    Step "evaluate $c" $sum $cmd '"primary"'
 }
 
 & $py -m task1.analyze

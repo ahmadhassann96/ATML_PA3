@@ -60,8 +60,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--condition", required=True, choices=[c[0] for c in C.CONDITIONS])
     ap.add_argument("--gen_bs", type=int, default=32)
-    ap.add_argument("--ll_bs", type=int, default=8,
-                    help="32 needs ~11 GB: full-vocab log-probs for long BoolQ passages")
+    ap.add_argument("--ll_bs", type=int, default=4,
+                    help="32 needs ~24 GB: full-vocab log-probs for the longest BoolQ passages; 4 is meant to fit 8 GB")
     ap.add_argument("--limit", type=int, default=None, help="docs per task (debug only; full splits otherwise)")
     ap.add_argument("--skip", nargs="*", default=[], help="tasks to skip, e.g. gsm8k_cot")
     ap.add_argument("--smoke", action="store_true", help="evaluate the tiny *_smoke training runs")
@@ -96,6 +96,7 @@ def main():
                             gen_kwargs=f"max_gen_toks={C.GSM8K_MAX_NEW}", log_samples=True,
                             limit=args.limit, **_seed_kwargs())
         summary["timing_s"][C.GSM8K_TASK] = time.perf_counter() - t0
+        summary.setdefault("run_info", {})[C.GSM8K_TASK] = dict(batch_size=args.gen_bs, gpu=torch.cuda.get_device_name())
         summary["scores"][C.GSM8K_TASK] = {k: v for k, v in r["results"][C.GSM8K_TASK].items() if k != "alias"}
         summary["task_configs"] = {C.GSM8K_TASK: r["configs"][C.GSM8K_TASK]}
         rows = gsm8k_rows(r["samples"][C.GSM8K_TASK], tok)
@@ -118,6 +119,8 @@ def main():
         r = simple_evaluate(model=lm, tasks=tasks, num_fewshot=0, apply_chat_template=False,
                             log_samples=True, limit=args.limit, **_seed_kwargs())
         summary["timing_s"]["loglikelihood_tasks"] = time.perf_counter() - t0
+        summary.setdefault("run_info", {})["loglikelihood_tasks"] = dict(batch_size=args.ll_bs,
+                                                                         gpu=torch.cuda.get_device_name())
         summary.setdefault("task_configs", {}).update({t: r["configs"][t] for t in tasks})
         for t in tasks:
             summary["scores"][t] = {k: v for k, v in r["results"][t].items() if k != "alias"}

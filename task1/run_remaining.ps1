@@ -3,6 +3,9 @@
 # an interruption picks up where it stopped. Run from the repo root:
 #     powershell -ExecutionPolicy Bypass -File task1\run_remaining.ps1
 # Set $env:PA3_PY to use a different Python (default: the PA2 venv used for all local runs).
+# -Skip full_ft_l2sp,oplora16 leaves those evaluations out (e.g. when they run on Kaggle instead).
+param([string[]]$Skip = @())
+$Skip = @($Skip | ForEach-Object { $_ -split "," } | Where-Object { $_ })
 
 $ErrorActionPreference = "Continue"
 $py = $env:PA3_PY
@@ -32,6 +35,7 @@ foreach ($c in $conds) {
 & $py -m task1.qualitative --collect
 
 foreach ($c in $conds) {
+    if ($Skip -contains $c) { Write-Host "== skip evaluate $c (-Skip)"; continue }
     $sum = "$out\eval\$($c.Replace('@', '_at_'))\summary.json"
     $cmd = @("-m", "task1.evaluate", "--condition", $c)
     # GSM8K already finished but the log-likelihood tasks did not: keep GSM8K, run only the rest

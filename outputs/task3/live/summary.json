@@ -1,0 +1,155 @@
+{
+  "n_questions": 50,
+  "strategies": {
+    "single": {
+      "accuracy": 0.62,
+      "mean_input_tokens": 108.38,
+      "mean_output_tokens": 761.32,
+      "mean_runtime_s": 40.00762625539999,
+      "total_runtime_s": 2000.3813127699996,
+      "peak_gpu_mem_gb": 6.535000064,
+      "questions_with_any_capped_call": 0.04,
+      "cap_rate": 0.04,
+      "no_extract_rate": 0.04
+    },
+    "parallel": {
+      "accuracy": 0.54,
+      "mean_input_tokens": 325.14,
+      "mean_output_tokens": 1859.52,
+      "mean_runtime_s": 96.68770028995999,
+      "total_runtime_s": 4834.385014498,
+      "peak_gpu_mem_gb": 6.372727808,
+      "questions_with_any_capped_call": 0.26,
+      "cap_rate_per_response": 0.16666666666666663,
+      "no_extract_rate_per_response": 0.16666666666666663
+    },
+    "refine": {
+      "accuracy": 0.62,
+      "mean_input_tokens": 889.62,
+      "mean_output_tokens": 1218.74,
+      "mean_runtime_s": 63.80398874554001,
+      "total_runtime_s": 3190.1994372770005,
+      "peak_gpu_mem_gb": 6.628533248,
+      "questions_with_any_capped_call": 0.2,
+      "initial_cap_rate": 0.2,
+      "revision_cap_rate": 0.0,
+      "revision_no_extract_rate": 0.0,
+      "initial_accuracy": 0.56
+    }
+  },
+  "refinement_transitions": {
+    "wrong_to_correct": 3,
+    "correct_to_wrong": 0,
+    "correct_to_correct": 28,
+    "wrong_to_wrong": 19,
+    "answer_changed": 10
+  },
+  "differences": {
+    "parallel_vs_single": {
+      "diff_pp": -8.0,
+      "ci95_pp": [
+        -20.0,
+        4.0
+      ]
+    },
+    "refine_vs_single": {
+      "diff_pp": 0.0,
+      "ci95_pp": [
+        -12.0,
+        12.0
+      ]
+    },
+    "refine_vs_parallel": {
+      "diff_pp": 8.0,
+      "ci95_pp": [
+        -2.0,
+        18.0
+      ]
+    },
+    "refine_vs_initial": {
+      "diff_pp": 6.0,
+      "ci95_pp": [
+        0.0,
+        14.000000000000002
+      ]
+    }
+  },
+  "run_info": [
+    {
+      "env": {
+        "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+        "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu130",
+        "cuda": "13.0",
+        "gpu": "Tesla T4",
+        "gpu_mem_bytes": 15636037632,
+        "transformers": "4.57.1",
+        "datasets": "4.8.5",
+        "lm_eval": null,
+        "accelerate": "1.15.0",
+        "numpy": "2.1.3"
+      },
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "dtype": "float16",
+      "batch_size": 1,
+      "smoke": false,
+      "gen_kwargs": {
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "repetition_penalty": 1.0,
+        "do_sample": true
+      },
+      "limits": {
+        "single": 3072,
+        "parallel": 1024,
+        "n_parallel": 3,
+        "revision": 2048
+      },
+      "load_time_s": 31.245679472000006,
+      "eos_token_ids": [
+        151643,
+        151645
+      ]
+    },
+    {
+      "env": {
+        "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+        "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+        "torch": "2.11.0+cu130",
+        "cuda": "13.0",
+        "gpu": "Tesla T4",
+        "gpu_mem_bytes": 15636037632,
+        "transformers": "4.57.1",
+        "datasets": "4.8.5",
+        "lm_eval": null,
+        "accelerate": "1.15.0",
+        "numpy": "2.1.3"
+      },
+      "model": "Qwen/Qwen2.5-3B-Instruct",
+      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+      "dtype": "float16",
+      "batch_size": 1,
+      "smoke": false,
+      "gen_kwargs": {
+        "temperature": 0.7,
+        "top_p": 0.8,
+        "top_k": 20,
+        "repetition_penalty": 1.0,
+        "do_sample": true
+      },
+      "limits": {
+        "single": 3072,
+        "parallel": 1024,
+        "n_parallel": 3,
+        "revision": 2048
+      },
+      "load_time_s": 31.31958167099998,
+      "eos_token_ids": [
+        151643,
+        151645
+      ]
+    }
+  ]
+}

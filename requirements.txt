@@ -12,3 +12,7 @@ matplotlib
 pyyaml
 tqdm
 safetensors
+scipy
+pyarrow
+math-verify[antlr4_13_2]>=0.9
+gdown

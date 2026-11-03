@@ -1,0 +1,33 @@
+{
+  "scorer": "pa3-task3-scorer-v1",
+  "metadata": "data\\mathvista_testmini.json",
+  "rollouts": 32000,
+  "missing_extraction": 3032,
+  "no_answer_group": 4092,
+  "unusable_nonempty": 1060,
+  "rollout_accuracy": 0.54478125,
+  "mean_groups_per_question": 4.201,
+  "questions_with_any_correct": 0.901,
+  "by_answer_type": {
+    "free_form/float": {
+      "n_rollouts": 1280,
+      "rollout_acc": 0.32734375,
+      "no_answer": 0.265625
+    },
+    "free_form/integer": {
+      "n_rollouts": 13376,
+      "rollout_acc": 0.4901315789473684,
+      "no_answer": 0.1236543062200957
+    },
+    "free_form/list": {
+      "n_rollouts": 64,
+      "rollout_acc": 0.0,
+      "no_answer": 0.171875
+    },
+    "multi_choice/text": {
+      "n_rollouts": 17280,
+      "rollout_acc": 0.6052083333333333,
+      "no_answer": 0.12077546296296296
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "n_questions": 1000,
+  "n_rollouts": 32000,
+  "datasets": [
+    "math"
+  ],
+  "token_lists_aligned": true,
+  "total_tokens": 20742094,
+  "zero_length_rollouts": 0,
+  "nan_logp": 0,
+  "nan_kl": 0,
+  "capped_rollouts": 523,
+  "null_extractions": 521
+}

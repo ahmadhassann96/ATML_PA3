@@ -29,3 +29,4 @@ outputs/**/*smoke*/
 # Third-party prompt file (downloaded by python -m task1.prefetch)
 first_plot_questions.yaml
 kaggle_upload/
+outputs/**/*smoke*

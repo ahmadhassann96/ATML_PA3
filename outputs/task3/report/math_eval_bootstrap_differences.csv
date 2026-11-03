@@ -1,0 +1,37 @@
+dataset,N,a,b,diff_pp,ci_lo_pp,ci_hi_pp
+math,1,Self-consistency,FirstAns,0.0,0.0,0.0
+math,1,Max self-certainty,Self-consistency,0.0,0.0,0.0
+math,1,Self-certainty + RWC,Self-consistency,0.0,0.0,0.0
+math,1,Self-certainty + RWC,Max self-certainty,0.0,0.0,0.0
+math,1,Max log-prob,Self-consistency,0.0,0.0,0.0
+math,1,Shortest,Self-consistency,0.0,0.0,0.0
+math,2,Self-consistency,FirstAns,0.0,0.0,0.0
+math,2,Max self-certainty,Self-consistency,2.4124999999999996,1.7375000000000003,3.1375
+math,2,Self-certainty + RWC,Self-consistency,2.4124999999999996,1.7375000000000003,3.1375
+math,2,Self-certainty + RWC,Max self-certainty,0.0,0.0,0.0
+math,2,Max log-prob,Self-consistency,1.45,0.7875,2.1253124999999997
+math,2,Shortest,Self-consistency,0.9375,0.22500000000000003,1.6
+math,4,Self-consistency,FirstAns,4.85,4.0621875,5.6503125
+math,4,Max self-certainty,Self-consistency,-0.42499999999999993,-1.2878125,0.47531249999999986
+math,4,Self-certainty + RWC,Self-consistency,0.5,-0.12531249999999997,1.2003125
+math,4,Self-certainty + RWC,Max self-certainty,0.9249999999999999,0.5121875,1.3875
+math,4,Max log-prob,Self-consistency,-1.9625,-2.8503125000000002,-1.0871875000000002
+math,4,Shortest,Self-consistency,-4.0,-5.074999999999999,-2.9871875
+math,8,Self-consistency,FirstAns,7.4375,6.337187500000001,8.513437499999998
+math,8,Max self-certainty,Self-consistency,-1.6500000000000004,-2.875,-0.47500000000000014
+math,8,Self-certainty + RWC,Self-consistency,1.0749999999999997,0.5125,1.6753124999999998
+math,8,Self-certainty + RWC,Max self-certainty,2.725,1.8746875,3.7253125
+math,8,Max log-prob,Self-consistency,-4.250000000000001,-5.5628125,-2.9621875000000006
+math,8,Shortest,Self-consistency,-7.225,-8.7503125,-5.7125
+math,16,Self-consistency,FirstAns,8.7625,7.487187499999999,10.100312500000001
+math,16,Max self-certainty,Self-consistency,-2.4124999999999996,-4.113124999999999,-0.8624999999999999
+math,16,Self-certainty + RWC,Self-consistency,1.5375,0.8500000000000001,2.2128125
+math,16,Self-certainty + RWC,Max self-certainty,3.95,2.586875,5.3500000000000005
+math,16,Max log-prob,Self-consistency,-6.724999999999999,-8.5134375,-4.9875
+math,16,Shortest,Self-consistency,-9.95,-12.012812499999999,-8.1371875
+math,32,Self-consistency,FirstAns,9.4375,7.9750000000000005,11.0125
+math,32,Max self-certainty,Self-consistency,-3.1625,-5.512812499999999,-0.8250000000000001
+math,32,Self-certainty + RWC,Self-consistency,1.7624999999999997,0.6868750000000001,2.9124999999999996
+math,32,Self-certainty + RWC,Max self-certainty,4.925,2.799375,7.175
+math,32,Max log-prob,Self-consistency,-9.7875,-12.3875,-7.399062500000002
+math,32,Shortest,Self-consistency,-11.4125,-14.125312499999998,-8.985625000000002

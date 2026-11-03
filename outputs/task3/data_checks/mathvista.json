@@ -1,0 +1,17 @@
+{
+  "n_questions": 1000,
+  "n_rollouts": 32000,
+  "datasets": [
+    "mathvista"
+  ],
+  "token_lists_aligned": true,
+  "total_tokens": 8961703,
+  "zero_length_rollouts": 0,
+  "nan_logp": 0,
+  "nan_kl": 0,
+  "attn_zero_denominator": 0,
+  "attention_aligned": true,
+  "first_token_generated_attn_zero": true,
+  "capped_rollouts": 487,
+  "null_extractions": 3032
+}

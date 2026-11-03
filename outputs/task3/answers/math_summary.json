@@ -1,0 +1,22 @@
+{
+  "scorer": "pa3-task3-scorer-v1",
+  "math_verify_version": "0.9.0",
+  "group_vs_individual_grading_mismatches": 0,
+  "time_limited_questions": {
+    "test:2478": [],
+    "test:4928": [
+      "EXACT_TEXT_FALLBACK"
+    ]
+  },
+  "time_limits_s": {
+    "question": 15,
+    "parse": 15
+  },
+  "rollouts": 32000,
+  "missing_extraction": 521,
+  "no_answer_group": 521,
+  "unusable_nonempty": 0,
+  "rollout_accuracy": 0.66315625,
+  "mean_groups_per_question": 5.655,
+  "questions_with_any_correct": 0.919
+}

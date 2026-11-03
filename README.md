@@ -69,7 +69,37 @@ _TODO_
 
 ## Task 3 — Test-time compute
 
-_TODO_
+Supplied rollouts (`ATML-PA3-Data/`, from the PA's Google Drive; not committed) and MathVista metadata
+(`data/mathvista_testmini.json`, from the MathVista repo) are read locally; everything offline is CPU-only.
+Extra dependencies: `math-verify[antlr4_13_2]` (0.9.0), `scipy`, `pyarrow`.
+
+| Step | Command | Output |
+|---|---|---|
+| Join tables, check token alignment, splits (dev 200 / eval 800), 10 rollout orders per question | `python -m task3.data` | `outputs/task3/{data_checks,splits,orders}/` |
+| Answer groups + correctness (math-verify / MathVista rules, scorer `pa3-task3-scorer-v1`) | `python -m task3.answers` | `outputs/task3/answers/` |
+| Selection at N = 1…32: FirstAns, self-consistency, log-prob, self-certainty, RWC, shortest, vision, VisConf, tokenwise fusion | `python -m task3.offline` | `outputs/task3/offline/` |
+| Signal analysis (quartiles, correlations, confidence–vision, trajectories) | `python -m task3.signals` | `outputs/task3/signals/` |
+| Adaptive stopping (dev-selected τ/γ, held-out evaluation) | `python -m task3.adaptive` | `outputs/task3/adaptive/` |
+| Tables, bootstrap CIs, figures | `python -m task3.report` | `outputs/task3/report/` |
+| Live: single vs parallel vs refinement on 50 MATH questions (GPU) | `python -m task3.live --export`, then `notebooks/task3_kaggle_live.ipynb` on Kaggle (2× T4) | `outputs/task3/live/calls_shard*.jsonl` |
+| Live analysis | `python -m task3.live_analyze` | `outputs/task3/live/summary.json` |
+
+**Implementation notes**
+
+- Per-question outcomes are averaged over the 10 orders, then over questions; headline numbers use the 800
+  held-out questions, and 95% intervals come from 1,000 paired question-level bootstrap resamples.
+- Ties: highest-score rules keep the earliest candidate in the current order; votes go to the answer whose
+  earliest supporting rollout comes first; RWC uses average ranks. VisConf calibration (5th/95th percentiles
+  of pooled token KL, linear interpolation) is recomputed on every candidate prefix.
+- Answer equivalence: MATH answers are compared with math-verify (each parsed as `\boxed{…}`); a few
+  answers with huge exponents make SymPy run away, so grouping runs in a worker with a 15 s limit per
+  question and the one question that still exceeds it (`test:4928`, all answers wrong) falls back to
+  exact-text groups (recorded in `answers/math_summary.json`). MathVista follows MathVista's
+  `normalize_extracted_answer` (option letters, `int(float(x))`, `round(float(x), precision)`) after a light
+  LaTeX clean-up of units and formatting that the export's boxed extractor keeps. Missing or unusable
+  answers form one NO_ANSWER group that stays in voting and cost and is always graded wrong.
+- The live runs use the pinned Qwen2.5-3B-Instruct revision in FP16, batch size 1, one seed per call,
+  and charge the shared initial response to both parallel sampling and refinement.
 
 ## Attribution
 

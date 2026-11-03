@@ -1,0 +1,79 @@
+dataset,N,a,b,diff_pp,ci_lo_pp,ci_hi_pp
+mathvista,1,Self-consistency,FirstAns,0.0,0.0,0.0
+mathvista,1,Max self-certainty,Self-consistency,0.0,0.0,0.0
+mathvista,1,Self-certainty + RWC,Self-consistency,0.0,0.0,0.0
+mathvista,1,Self-certainty + RWC,Max self-certainty,0.0,0.0,0.0
+mathvista,1,Max log-prob,Self-consistency,0.0,0.0,0.0
+mathvista,1,Shortest,Self-consistency,0.0,0.0,0.0
+mathvista,1,VisConf + RWC,Self-consistency,0.0,0.0,0.0
+mathvista,1,VisConf + RWC,Max VisConf,0.0,0.0,0.0
+mathvista,1,VisConf + RWC,Self-certainty + RWC,0.0,0.0,0.0
+mathvista,1,VisConf + RWC,Vision + RWC,0.0,0.0,0.0
+mathvista,1,Vision + RWC,Self-consistency,0.0,0.0,0.0
+mathvista,1,Tokenwise fusion + RWC,VisConf + RWC,0.0,0.0,0.0
+mathvista,1,Max tokenwise fusion,Max VisConf,0.0,0.0,0.0
+mathvista,2,Self-consistency,FirstAns,0.0,0.0,0.0
+mathvista,2,Max self-certainty,Self-consistency,1.2375,0.38718749999999996,2.0628124999999997
+mathvista,2,Self-certainty + RWC,Self-consistency,1.2375,0.38718749999999996,2.0628124999999997
+mathvista,2,Self-certainty + RWC,Max self-certainty,0.0,0.0,0.0
+mathvista,2,Max log-prob,Self-consistency,0.8499999999999999,-0.07531250000000024,1.6499999999999997
+mathvista,2,Shortest,Self-consistency,1.3124999999999996,0.4121874999999998,2.2128124999999996
+mathvista,2,VisConf + RWC,Self-consistency,1.7499999999999998,0.8621874999999999,2.5999999999999996
+mathvista,2,VisConf + RWC,Max VisConf,0.0,0.0,0.0
+mathvista,2,VisConf + RWC,Self-certainty + RWC,0.5124999999999998,-0.1628125,1.2006249999999996
+mathvista,2,VisConf + RWC,Vision + RWC,1.0250000000000001,0.33750000000000013,1.6625
+mathvista,2,Vision + RWC,Self-consistency,0.7249999999999995,-0.16281250000000025,1.6378124999999994
+mathvista,2,Tokenwise fusion + RWC,VisConf + RWC,0.037500000000000026,-0.30000000000000004,0.43749999999999994
+mathvista,2,Max tokenwise fusion,Max VisConf,0.037500000000000026,-0.30000000000000004,0.43749999999999994
+mathvista,4,Self-consistency,FirstAns,4.475,3.675,5.324999999999999
+mathvista,4,Max self-certainty,Self-consistency,-2.8875,-3.950625,-1.8124999999999998
+mathvista,4,Self-certainty + RWC,Self-consistency,-0.9999999999999999,-1.7999999999999998,-0.26249999999999996
+mathvista,4,Self-certainty + RWC,Max self-certainty,1.8874999999999995,1.2374999999999998,2.4756249999999995
+mathvista,4,Max log-prob,Self-consistency,-4.475,-5.6,-3.375
+mathvista,4,Shortest,Self-consistency,-3.225,-4.375,-2.1
+mathvista,4,VisConf + RWC,Self-consistency,-0.13749999999999984,-0.8874999999999997,0.6628125
+mathvista,4,VisConf + RWC,Max VisConf,1.6,0.9375000000000001,2.2253125
+mathvista,4,VisConf + RWC,Self-certainty + RWC,0.8625000000000003,0.16250000000000026,1.5875
+mathvista,4,VisConf + RWC,Vision + RWC,1.4,0.6875,2.1378124999999994
+mathvista,4,Vision + RWC,Self-consistency,-1.5374999999999996,-2.375,-0.7371875000000001
+mathvista,4,Tokenwise fusion + RWC,VisConf + RWC,-0.175,-0.5375,0.18781249999999977
+mathvista,4,Max tokenwise fusion,Max VisConf,-0.4625000000000001,-0.9625,0.037812499999999825
+mathvista,8,Self-consistency,FirstAns,6.5125,5.3496875,7.700312500000001
+mathvista,8,Max self-certainty,Self-consistency,-5.112500000000001,-6.612500000000001,-3.5496874999999997
+mathvista,8,Self-certainty + RWC,Self-consistency,0.26250000000000007,-0.5628124999999999,1.0625
+mathvista,8,Self-certainty + RWC,Max self-certainty,5.375,4.1996875,6.5625
+mathvista,8,Max log-prob,Self-consistency,-7.925,-9.450312499999999,-6.361875
+mathvista,8,Shortest,Self-consistency,-5.8375,-7.4128125,-4.3625
+mathvista,8,VisConf + RWC,Self-consistency,0.8500000000000001,0.11187499999999993,1.6749999999999998
+mathvista,8,VisConf + RWC,Max VisConf,4.6875,3.5250000000000012,5.85
+mathvista,8,VisConf + RWC,Self-certainty + RWC,0.5875000000000001,-0.2378125,1.4249999999999998
+mathvista,8,VisConf + RWC,Vision + RWC,0.7374999999999999,0.06250000000000006,1.3628125000000002
+mathvista,8,Vision + RWC,Self-consistency,0.11249999999999999,-0.7375,0.9749999999999999
+mathvista,8,Tokenwise fusion + RWC,VisConf + RWC,0.125,-0.21249999999999997,0.4875000000000001
+mathvista,8,Max tokenwise fusion,Max VisConf,-0.6250000000000001,-1.3000000000000003,0.06281249999999974
+mathvista,16,Self-consistency,FirstAns,7.725,6.374687499999999,9.1628125
+mathvista,16,Max self-certainty,Self-consistency,-5.987500000000001,-8.0125,-3.975
+mathvista,16,Self-certainty + RWC,Self-consistency,0.42500000000000004,-0.3500000000000001,1.2000000000000002
+mathvista,16,Self-certainty + RWC,Max self-certainty,6.4125000000000005,4.6625,8.125625
+mathvista,16,Max log-prob,Self-consistency,-10.4875,-12.6003125,-8.374375
+mathvista,16,Shortest,Self-consistency,-7.475000000000001,-9.5875,-5.474687499999999
+mathvista,16,VisConf + RWC,Self-consistency,0.8125,-0.0006249999999999914,1.6503124999999996
+mathvista,16,VisConf + RWC,Max VisConf,5.475,3.8625,7.1128125
+mathvista,16,VisConf + RWC,Self-certainty + RWC,0.38750000000000007,-0.438125,1.3503124999999996
+mathvista,16,VisConf + RWC,Vision + RWC,0.6,-0.17500000000000007,1.3124999999999998
+mathvista,16,Vision + RWC,Self-consistency,0.21249999999999997,-0.6875,1.2
+mathvista,16,Tokenwise fusion + RWC,VisConf + RWC,0.075,-0.3374999999999999,0.5003124999999997
+mathvista,16,Max tokenwise fusion,Max VisConf,-1.0624999999999998,-2.0378125000000002,-0.024687500000000136
+mathvista,32,Self-consistency,FirstAns,8.6,6.761874999999999,10.3875
+mathvista,32,Max self-certainty,Self-consistency,-7.012500000000001,-9.950312499999999,-3.8615625000000007
+mathvista,32,Self-certainty + RWC,Self-consistency,0.9874999999999998,-0.3124999999999999,2.375
+mathvista,32,Self-certainty + RWC,Max self-certainty,8.0,5.0,10.878124999999997
+mathvista,32,Max log-prob,Self-consistency,-13.7625,-16.6625,-10.7115625
+mathvista,32,Shortest,Self-consistency,-8.787500000000001,-11.726562500000002,-5.925
+mathvista,32,VisConf + RWC,Self-consistency,1.2374999999999998,-0.1375,2.6628124999999994
+mathvista,32,VisConf + RWC,Max VisConf,6.0,3.25,8.753124999999997
+mathvista,32,VisConf + RWC,Self-certainty + RWC,0.25,-1.0,1.5
+mathvista,32,VisConf + RWC,Vision + RWC,0.25,-1.0031249999999998,1.5
+mathvista,32,Vision + RWC,Self-consistency,0.9875,-0.6128125,2.6375
+mathvista,32,Tokenwise fusion + RWC,VisConf + RWC,-0.375,-1.125,0.25
+mathvista,32,Max tokenwise fusion,Max VisConf,-1.375,-3.375,0.5

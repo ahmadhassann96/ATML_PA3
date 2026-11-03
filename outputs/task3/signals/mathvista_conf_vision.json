@@ -1,0 +1,14 @@
+{
+  "fusion_identity_max_abs_error": 1.760763118641151e-08,
+  "within_rollout_corr_c_v": {
+    "question_mean_of_rollout_means": -0.210993880600145,
+    "question_median": -0.2115446336116984,
+    "question_q25": -0.30552108768301417,
+    "question_q75": -0.09386758787313865,
+    "frac_questions_negative": 0.89375,
+    "correct_rollouts_mean": -0.20077092333727214,
+    "incorrect_rollouts_mean": -0.222634256874065
+  },
+  "mean_cov_c_v": -0.002243381138615124,
+  "split": "eval"
+}

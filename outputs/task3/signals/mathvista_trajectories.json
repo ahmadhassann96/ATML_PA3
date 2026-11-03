@@ -1,0 +1,59 @@
+{
+  "rule": "first evaluation-split questions (split order) where VisConf+RWC and self-consistency select different answers at N=32 in order 0 and exactly one of them is correct; both selected rollouts are shown",
+  "examples": [
+    {
+      "question": "552",
+      "method": "VisConf+RWC pick",
+      "rollout": 2,
+      "correct": false,
+      "answer_group": 2,
+      "Z": 0.06160594694029773,
+      "n_tokens": 204
+    },
+    {
+      "question": "552",
+      "method": "self-consistency pick",
+      "rollout": 28,
+      "correct": true,
+      "answer_group": 3,
+      "Z": 0.05870754727936616,
+      "n_tokens": 216
+    },
+    {
+      "question": "643",
+      "method": "VisConf+RWC pick",
+      "rollout": 26,
+      "correct": true,
+      "answer_group": 3,
+      "Z": 0.004581084277012113,
+      "n_tokens": 467
+    },
+    {
+      "question": "643",
+      "method": "self-consistency pick",
+      "rollout": 29,
+      "correct": false,
+      "answer_group": 2,
+      "Z": 0.005482601800633401,
+      "n_tokens": 434
+    },
+    {
+      "question": "542",
+      "method": "VisConf+RWC pick",
+      "rollout": 6,
+      "correct": false,
+      "answer_group": 3,
+      "Z": 0.06866731077714762,
+      "n_tokens": 109
+    },
+    {
+      "question": "542",
+      "method": "self-consistency pick",
+      "rollout": 26,
+      "correct": true,
+      "answer_group": 4,
+      "Z": 0.06375331669633952,
+      "n_tokens": 158
+    }
+  ]
+}

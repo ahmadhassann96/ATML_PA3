@@ -1,0 +1,107 @@
+{
+  "vqa_val_filter": {
+    "pairs": 95144,
+    "kept_yes/no": 20963,
+    "answer_type_mismatch": 64,
+    "low_agreement": 57777,
+    "kept_other": 8033,
+    "kept_number": 4923,
+    "same_consensus": 3378,
+    "empty_answer": 6
+  },
+  "vqa_train_filter": {
+    "pairs": 200394,
+    "kept_number": 10561,
+    "low_agreement": 121255,
+    "kept_other": 17368,
+    "same_consensus": 7086,
+    "kept_yes/no": 44033,
+    "answer_type_mismatch": 84,
+    "empty_answer": 7
+  },
+  "isolation": {
+    "train_split_only": true,
+    "eval_split_only": true,
+    "eval_sets_pairwise_disjoint_and_disjoint_from_train": true
+  },
+  "counts": {
+    "captions_train": 18000,
+    "captions_dev": 96,
+    "vqa_train": 1536,
+    "vqa_dev": 32,
+    "vqa_test": 96,
+    "ground_pool_presence": 3200,
+    "ground_pool_counting": 2840,
+    "ground_dev": 24,
+    "ground_test": 64
+  },
+  "kinds": {
+    "vqa_train": {
+      "yes/no": 640,
+      "number": 256,
+      "other": 640
+    },
+    "vqa_dev": {
+      "yes/no": 12,
+      "number": 8,
+      "other": 12
+    },
+    "vqa_test": {
+      "yes/no": 36,
+      "number": 24,
+      "other": 36
+    },
+    "ground_pool_presence": {
+      "presence": 3200
+    },
+    "ground_pool_counting": {
+      "counting": 2840
+    },
+    "ground_dev": {
+      "presence": 12,
+      "counting": 12
+    },
+    "ground_test": {
+      "presence": 32,
+      "counting": 32
+    }
+  },
+  "images": {
+    "captions_train": 6000,
+    "captions_dev": 96,
+    "vqa_train": 2955,
+    "vqa_dev": 64,
+    "vqa_test": 192,
+    "ground_pool_presence": 4306,
+    "ground_pool_counting": 2577,
+    "ground_dev": 48,
+    "ground_test": 128
+  },
+  "n_images_total": 9263,
+  "n_train_images": 8735,
+  "count_answers": {
+    "ground_pool_counting": {
+      "1": 1785,
+      "4": 959,
+      "2": 1709,
+      "3": 1227
+    },
+    "ground_dev": {
+      "3": 6,
+      "4": 7,
+      "2": 6,
+      "1": 5
+    },
+    "ground_test": {
+      "1": 20,
+      "3": 20,
+      "2": 14,
+      "4": 10
+    }
+  },
+  "pool_categories": {
+    "presence": 80,
+    "counting": 71
+  },
+  "seconds": 87.86281752586365
+}

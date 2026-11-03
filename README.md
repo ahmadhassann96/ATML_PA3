@@ -65,7 +65,42 @@ Set `PA3_CKPT=<dir>` to write recovery checkpoints somewhere other than the run 
 
 ## Task 2 — VLM and visual grounding
 
-_TODO_
+Frozen `google/siglip-base-patch16-224` → trainable MLP connector (768→1024, GELU, 1024→1024) → Qwen3-0.6B
+(frozen; LoRA on q/k/v/o in Stages 2–3). Raw COCO 2014 / VQAv2 annotations go in `data/task2/raw*`
+(`PA3_T2_DATA`; not committed). Our full run used Kaggle (2× T4) with `notebooks/task2_kaggle.ipynb`, which runs
+every step below (main run on GPU 0, the optional 49-token run on GPU 1).
+
+| Step | Command | Output |
+|---|---|---|
+| Select captions, grounding pairs and VQAv2 complementary pairs (seed 6304) | `python -m task2.data --select` | `outputs/task2/data/*.jsonl`, `selection.json`, `data_checks.json` |
+| Download only the selected COCO images | `python -m task2.data --download` | `data/task2/images/` |
+| Cache SigLIP patch features (FP16) | `python -m task2.features` | `outputs/task2/cache/` (`PA3_T2_CACHE`) |
+| Three-stage training (2,250 + 1,500 + 750 updates), dev metrics, checkpoints | `python -m task2.train` (49 tokens: `--pool 2 --run pool49`) | `outputs/task2/runs/<run>/` |
+| Final test: 4 image conditions × 2 suites | `python -m task2.evaluate --run <run>` | `runs/<run>/eval/stage3/predictions.jsonl` |
+| Tables, pair-bootstrap CIs, swap behaviour, learning curves, examples | `python -m task2.analyze` | `outputs/task2/report/` |
+
+Quick check without real data: `python -m task2.features --fake`, then `python -m task2.train --smoke`, `python -m task2.evaluate --smoke`.
+
+**Implementation notes**
+
+- *Prompt*: Qwen3 chat template with `enable_thinking=False`; the visual tokens replace placeholder positions at the
+  start of the user message, followed by a newline and the question (`task2/model.py`). Captions use
+  "Write a short caption for this image."; questions get "Answer the question using a single word or number."
+  The 80-token question cap applies to the question text. No-image inputs drop the visual tokens and their newline,
+  so they are the plain text prompt; positions and masks are rebuilt.
+- *Features*: SigLIP `last_hidden_state` (post-layernorm applied once by the vision tower), 196 tokens in 14 × 14
+  row-major order, deterministic 224 × 224 resize. The 49-token variant averages each 2 × 2 block before the connector.
+- *Calibration*: the connector output is multiplied by a fixed scale s = mean ‖text embedding‖ / mean ‖initial visual
+  token‖, measured on 512 training caption examples (recorded in `runs/<run>/resources.json`).
+- *Optimisation*: one AdamW optimizer and schedule per stage (5% warmup, cosine to 10% of peak); one dynamic loss scaler
+  for the whole run. Loss = per-example mean token CE, averaged over the 16 examples of an update.
+- *Data rules*: grounding positives need a non-crowd instance covering ≥ 1% of the image; counting images need every
+  instance non-crowd and ≥ 0.5% of the image; categories with unreliable counts (skis, broccoli, book, banana, carrot)
+  are not used for counting. Dev/test grounding sets are half presence, half counting, one pair per category.
+  Training grounding pools reuse the training images already selected for captions and VQAv2. All evaluation images
+  are unique across every development and final-test set.
+- *VQA scoring*: answer normalization from the official VQA evaluation code (`task2/vqa_norm.py`), always applied to
+  predictions and references; soft accuracy averages min(1, matches/3) over the ten leave-one-out subsets.
 
 ## Task 3 — Test-time compute
 
@@ -106,4 +141,8 @@ Extra dependencies: `math-verify[antlr4_13_2]` (0.9.0), `scipy`, `pyarrow`.
 - LoRA initialization follows the reference LoRA / `peft` convention (Kaiming-uniform A, zero B); the code is our own.
 - Benchmarks, prompts, filters and metrics: [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).
 - Models and datasets: Qwen3-0.6B, MetaMathQA, GSM8K, HellaSwag, BoolQ, ARC-Easy (Hugging Face Hub).
+- Task 2: VQA answer normalization rules copied from the official VQA evaluation code
+  ([GT-Vision-Lab/VQA `vqaEval.py`](https://github.com/GT-Vision-Lab/VQA/blob/master/PythonEvaluationTools/vqaEvaluation/vqaEval.py)),
+  ported to Python 3 in `task2/vqa_norm.py`. Models: SigLIP-base-patch16-224, Qwen3-0.6B. Data: COCO 2014 captions and
+  instances, VQAv2 questions, annotations and complementary pairs.
 - Code was written with assistance from Claude (Anthropic); all of it was reviewed by the author.

@@ -1,0 +1,292 @@
+[
+  {
+    "rule": "both correct",
+    "suite": "grounding",
+    "kind": "presence",
+    "pair_id": "presence_val2014_cell_phone_166889_349594",
+    "question": "Does this image contain a cell phone?",
+    "images": [
+      [
+        "val2014",
+        166889
+      ],
+      [
+        "val2014",
+        349594
+      ]
+    ],
+    "references": [
+      "yes",
+      "no"
+    ],
+    "pred_correct": [
+      "yes",
+      "no"
+    ],
+    "pred_swap": [
+      "no",
+      "yes"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "grounding",
+    "kind": "presence",
+    "pair_id": "presence_val2014_vase_45094_232931",
+    "question": "Does this image contain a vase?",
+    "images": [
+      [
+        "val2014",
+        45094
+      ],
+      [
+        "val2014",
+        232931
+      ]
+    ],
+    "references": [
+      "yes",
+      "no"
+    ],
+    "pred_correct": [
+      "no",
+      "no"
+    ],
+    "pred_swap": [
+      "no",
+      "no"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "grounding",
+    "kind": "counting",
+    "pair_id": "counting_val2014_elephant_392985_527193",
+    "question": "How many elephants can you see?",
+    "images": [
+      [
+        "val2014",
+        392985
+      ],
+      [
+        "val2014",
+        527193
+      ]
+    ],
+    "references": [
+      "1",
+      "3"
+    ],
+    "pred_correct": [
+      "1",
+      "3"
+    ],
+    "pred_swap": [
+      "3",
+      "1"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "grounding",
+    "kind": "counting",
+    "pair_id": "counting_val2014_laptop_77811_236117",
+    "question": "How many laptops can you see?",
+    "images": [
+      [
+        "val2014",
+        77811
+      ],
+      [
+        "val2014",
+        236117
+      ]
+    ],
+    "references": [
+      "3",
+      "1"
+    ],
+    "pred_correct": [
+      "1",
+      "1"
+    ],
+    "pred_swap": [
+      "1",
+      "1"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "yes/no",
+    "pair_id": "vqa_358268020_504561000",
+    "question": "Is the boy wearing a suit?",
+    "images": [
+      [
+        "val2014",
+        358268
+      ],
+      [
+        "val2014",
+        504561
+      ]
+    ],
+    "references": [
+      "no",
+      "yes"
+    ],
+    "pred_correct": [
+      "no",
+      "yes"
+    ],
+    "pred_swap": [
+      "yes",
+      "no"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "yes/no",
+    "pair_id": "vqa_389419001_456558001",
+    "question": "Are these plants around?",
+    "images": [
+      [
+        "val2014",
+        389419
+      ],
+      [
+        "val2014",
+        456558
+      ]
+    ],
+    "references": [
+      "no",
+      "yes"
+    ],
+    "pred_correct": [
+      "yes",
+      "yes"
+    ],
+    "pred_swap": [
+      "yes",
+      "yes"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "number",
+    "pair_id": "vqa_91636001_106375004",
+    "question": "How many fingers is the man pointing?",
+    "images": [
+      [
+        "val2014",
+        91636
+      ],
+      [
+        "val2014",
+        106375
+      ]
+    ],
+    "references": [
+      "1",
+      "2"
+    ],
+    "pred_correct": [
+      "1",
+      "2"
+    ],
+    "pred_swap": [
+      "2",
+      "1"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "number",
+    "pair_id": "vqa_335887005_437284000",
+    "question": "What number is on the train?",
+    "images": [
+      [
+        "val2014",
+        335887
+      ],
+      [
+        "val2014",
+        437284
+      ]
+    ],
+    "references": [
+      "674",
+      "2"
+    ],
+    "pred_correct": [
+      "123456789",
+      "123456789"
+    ],
+    "pred_swap": [
+      "123456789",
+      "123456789"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "other",
+    "pair_id": "vqa_16308000_247378013",
+    "question": "What game is this?",
+    "images": [
+      [
+        "val2014",
+        16308
+      ],
+      [
+        "val2014",
+        247378
+      ]
+    ],
+    "references": [
+      "tennis",
+      "baseball"
+    ],
+    "pred_correct": [
+      "tennis",
+      "baseball"
+    ],
+    "pred_swap": [
+      "baseball",
+      "tennis"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "other",
+    "pair_id": "vqa_66879005_384901014",
+    "question": "What color is the lid?",
+    "images": [
+      [
+        "val2014",
+        66879
+      ],
+      [
+        "val2014",
+        384901
+      ]
+    ],
+    "references": [
+      "brown",
+      "white"
+    ],
+    "pred_correct": [
+      "white",
+      "white"
+    ],
+    "pred_swap": [
+      "white",
+      "white"
+    ]
+  }
+]

@@ -1,0 +1,292 @@
+[
+  {
+    "rule": "both correct",
+    "suite": "grounding",
+    "kind": "presence",
+    "pair_id": "presence_val2014_cell_phone_166889_349594",
+    "question": "Does this image contain a cell phone?",
+    "images": [
+      [
+        "val2014",
+        166889
+      ],
+      [
+        "val2014",
+        349594
+      ]
+    ],
+    "references": [
+      "yes",
+      "no"
+    ],
+    "pred_correct": [
+      "yes",
+      "no"
+    ],
+    "pred_swap": [
+      "no",
+      "yes"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "grounding",
+    "kind": "presence",
+    "pair_id": "presence_val2014_car_109046_23696",
+    "question": "Does this image contain a car?",
+    "images": [
+      [
+        "val2014",
+        109046
+      ],
+      [
+        "val2014",
+        23696
+      ]
+    ],
+    "references": [
+      "yes",
+      "no"
+    ],
+    "pred_correct": [
+      "no",
+      "no"
+    ],
+    "pred_swap": [
+      "no",
+      "no"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "grounding",
+    "kind": "counting",
+    "pair_id": "counting_val2014_elephant_392985_527193",
+    "question": "How many elephants can you see?",
+    "images": [
+      [
+        "val2014",
+        392985
+      ],
+      [
+        "val2014",
+        527193
+      ]
+    ],
+    "references": [
+      "1",
+      "3"
+    ],
+    "pred_correct": [
+      "1",
+      "3"
+    ],
+    "pred_swap": [
+      "3",
+      "1"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "grounding",
+    "kind": "counting",
+    "pair_id": "counting_val2014_sandwich_198796_175535",
+    "question": "How many sandwiches can you see?",
+    "images": [
+      [
+        "val2014",
+        198796
+      ],
+      [
+        "val2014",
+        175535
+      ]
+    ],
+    "references": [
+      "3",
+      "2"
+    ],
+    "pred_correct": [
+      "1",
+      "1"
+    ],
+    "pred_swap": [
+      "1",
+      "1"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "yes/no",
+    "pair_id": "vqa_358268020_504561000",
+    "question": "Is the boy wearing a suit?",
+    "images": [
+      [
+        "val2014",
+        358268
+      ],
+      [
+        "val2014",
+        504561
+      ]
+    ],
+    "references": [
+      "no",
+      "yes"
+    ],
+    "pred_correct": [
+      "no",
+      "yes"
+    ],
+    "pred_swap": [
+      "yes",
+      "no"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "yes/no",
+    "pair_id": "vqa_18975001_257887001",
+    "question": "Is it sunny?",
+    "images": [
+      [
+        "val2014",
+        18975
+      ],
+      [
+        "val2014",
+        257887
+      ]
+    ],
+    "references": [
+      "no",
+      "yes"
+    ],
+    "pred_correct": [
+      "yes",
+      "yes"
+    ],
+    "pred_swap": [
+      "yes",
+      "yes"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "number",
+    "pair_id": "vqa_91636001_106375004",
+    "question": "How many fingers is the man pointing?",
+    "images": [
+      [
+        "val2014",
+        91636
+      ],
+      [
+        "val2014",
+        106375
+      ]
+    ],
+    "references": [
+      "1",
+      "2"
+    ],
+    "pred_correct": [
+      "1",
+      "2"
+    ],
+    "pred_swap": [
+      "2",
+      "1"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "number",
+    "pair_id": "vqa_181643001_518030001",
+    "question": "How many benches are there?",
+    "images": [
+      [
+        "val2014",
+        181643
+      ],
+      [
+        "val2014",
+        518030
+      ]
+    ],
+    "references": [
+      "2",
+      "1"
+    ],
+    "pred_correct": [
+      "1",
+      "1"
+    ],
+    "pred_swap": [
+      "1",
+      "1"
+    ]
+  },
+  {
+    "rule": "both correct",
+    "suite": "vqa",
+    "kind": "other",
+    "pair_id": "vqa_517619001_564936004",
+    "question": "What is the young man riding on?",
+    "images": [
+      [
+        "val2014",
+        517619
+      ],
+      [
+        "val2014",
+        564936
+      ]
+    ],
+    "references": [
+      "snowboard",
+      "skis"
+    ],
+    "pred_correct": [
+      "snowboard",
+      "skis"
+    ],
+    "pred_swap": [
+      "skis",
+      "snowboard"
+    ]
+  },
+  {
+    "rule": "same answer for both images",
+    "suite": "vqa",
+    "kind": "other",
+    "pair_id": "vqa_17921003_254237000",
+    "question": "What color are the flowers in the vase?",
+    "images": [
+      [
+        "val2014",
+        17921
+      ],
+      [
+        "val2014",
+        254237
+      ]
+    ],
+    "references": [
+      "white",
+      "pink"
+    ],
+    "pred_correct": [
+      "white",
+      "white"
+    ],
+    "pred_swap": [
+      "white",
+      "white"
+    ]
+  }
+]

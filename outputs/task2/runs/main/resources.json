@@ -1,0 +1,144 @@
+{
+  "run": "main",
+  "updates": 4500,
+  "sessions": 1,
+  "calibration": {
+    "rule": "s = mean ||e_text|| / mean ||g_phi(F)|| at initialization, on one caption example for each of 512 training images (text: their prompt + caption tokens; visual: their 196 tokens)",
+    "n_examples": 512,
+    "n_text_tokens": 16879,
+    "text_token_norm": 0.8031363487243652,
+    "visual_token_norm_before": 15.91812801361084,
+    "scale": 0.05045419587263284
+  },
+  "stages": {
+    "stage1": {
+      "trainable_connector": 1837056,
+      "trainable_lora": 0,
+      "frozen_lm": 596049920,
+      "only_connector_and_lora_trainable": true,
+      "train_time_s": 2617.3571991789845,
+      "peak_gpu_mem_allocated_bytes": 1664034816,
+      "updates": 2250,
+      "export_bytes": 7350734
+    },
+    "stage2": {
+      "trainable_connector": 1837056,
+      "trainable_lora": 4587520,
+      "frozen_lm": 596049920,
+      "only_connector_and_lora_trainable": true,
+      "train_time_s": 1988.290264728027,
+      "peak_gpu_mem_allocated_bytes": 1676945408,
+      "updates": 1500,
+      "export_bytes": 25765386
+    },
+    "stage3": {
+      "trainable_connector": 1837056,
+      "trainable_lora": 4587520,
+      "frozen_lm": 596049920,
+      "only_connector_and_lora_trainable": true,
+      "train_time_s": 981.753696618005,
+      "peak_gpu_mem_allocated_bytes": 1676945408,
+      "updates": 750,
+      "export_bytes": 25765386
+    }
+  },
+  "mixture_draws": {
+    "stage1": {
+      "caption": 18000
+    },
+    "stage2": {
+      "counting": 2968,
+      "presence": 5974,
+      "caption": 3058
+    },
+    "stage3": {
+      "vqa": 4231,
+      "presence": 549,
+      "caption": 629,
+      "counting": 591
+    }
+  },
+  "mixture_examples": {
+    "stage1": {
+      "caption": 36000
+    },
+    "stage2": {
+      "counting": 5936,
+      "presence": 11948,
+      "caption_replay": 6116
+    },
+    "stage3": {
+      "vqa": 8462,
+      "presence": 1098,
+      "caption_replay": 1258,
+      "counting": 1182
+    }
+  },
+  "train_time_s": 5587.401160525016,
+  "dev_eval_time_s": 87.24117821300001,
+  "checkpoint_time_s": 1.484681811999053,
+  "skipped_updates": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "checks": {
+    "feature_shape": [
+      196,
+      768
+    ],
+    "split_isolation": {
+      "data_checks": {
+        "train_split_only": true,
+        "eval_split_only": true,
+        "eval_sets_pairwise_disjoint_and_disjoint_from_train": true
+      },
+      "dev_images_in_training": 0
+    },
+    "prompt_template": "<|im_start|>user\n<<IMAGE>><<QUESTION>><|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "example_prompts": {
+      "caption": "<|im_start|>user\n<196 visual tokens>\nWrite a short caption for this image.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\nTwo black and white birds are sitting in the rocks.<|im_end|>",
+      "presence": "<|im_start|>user\n<196 visual tokens>\nDoes this image contain a person?\nAnswer the question using a single word or number.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\nyes<|im_end|>",
+      "vqa": "<|im_start|>user\n<196 visual tokens>\nAre there people in the photo?\nAnswer the question using a single word or number.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\nyes<|im_end|>"
+    },
+    "grads_stage1": {
+      "update": 6,
+      "connector_grad_norms": {
+        "fc1.weight": 141.94972229003906,
+        "fc1.bias": 2.4651987552642822,
+        "fc2.weight": 162.81988525390625,
+        "fc2.bias": 6.396808624267578
+      },
+      "connector_grads_nonzero": true,
+      "lora_B_grad_norm": null,
+      "n_lora_B_with_grad": 0
+    },
+    "grads_stage2": {
+      "update": 2251,
+      "connector_grad_norms": {
+        "fc1.weight": 11.007610321044922,
+        "fc1.bias": 0.36990272998809814,
+        "fc2.weight": 28.201282501220703,
+        "fc2.bias": 0.811707079410553
+      },
+      "connector_grads_nonzero": true,
+      "lora_B_grad_norm": 119.50919342041016,
+      "n_lora_B_with_grad": 112
+    },
+    "grads_stage3": {
+      "update": 3751,
+      "connector_grad_norms": {
+        "fc1.weight": 1.9099494218826294,
+        "fc1.bias": 0.04021671041846275,
+        "fc2.weight": 1.869187355041504,
+        "fc2.bias": 0.06492316722869873
+      },
+      "connector_grads_nonzero": true,
+      "lora_B_grad_norm": 8.960783958435059,
+      "n_lora_B_with_grad": 112
+    }
+  },
+  "gpu": "Tesla T4"
+}

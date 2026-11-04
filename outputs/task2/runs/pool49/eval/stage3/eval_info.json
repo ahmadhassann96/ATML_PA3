@@ -1,0 +1,45 @@
+{
+  "run": "pool49",
+  "stage": "stage3",
+  "n_visual_tokens": 49,
+  "timing": {
+    "grounding/correct": {
+      "total_s": 2.8591949920000843,
+      "per_answer_s": 0.02233746087500066
+    },
+    "grounding/complementary": {
+      "total_s": 2.656232293998073,
+      "per_answer_s": 0.020751814796859946
+    },
+    "grounding/mismatched": {
+      "total_s": 2.716503055999965,
+      "per_answer_s": 0.021222680124999727
+    },
+    "grounding/no_image": {
+      "total_s": 2.425461907998397,
+      "per_answer_s": 0.018948921156237475
+    },
+    "vqa/correct": {
+      "total_s": 5.835435874000723,
+      "per_answer_s": 0.030392895177087098
+    },
+    "vqa/complementary": {
+      "total_s": 5.776430182001604,
+      "per_answer_s": 0.03008557386459169
+    },
+    "vqa/mismatched": {
+      "total_s": 4.808202798000821,
+      "per_answer_s": 0.025042722906254273
+    },
+    "vqa/no_image": {
+      "total_s": 4.1738822939969396,
+      "per_answer_s": 0.02173897028123406
+    }
+  },
+  "peak_gpu_mem_allocated_bytes": 1354717184,
+  "gen_max_new": 16,
+  "gen_bs": 8,
+  "decoding": "greedy",
+  "gpu": "Tesla T4",
+  "time": "2026-11-03 21:19:22"
+}

@@ -1,0 +1,293 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793735008.444182     181 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+calibration: {'rule': 's = mean ||e_text|| / mean ||g_phi(F)|| at initialization, on one caption example for each of 512 training images (text: their prompt + caption tokens; visual: their 196 tokens)', 'n_examples': 512, 'n_text_tokens': 16879, 'text_token_norm': 0.8031363487243652, 'visual_token_norm_before': 15.91812801361084, 'scale': 0.05045419587263284}
+  dev@0: cap 5.755 | ground nll 9.480 swap +0.306 | vqa nll 10.692 swap +0.071 (7s)
+/kaggle/working/ATML_PA3/task2/train.py:402: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  sched.step()
+[main] stage1 upd 1/4500 loss 5.3130 lr 8.85e-06 gn nan 1.20s/upd mem 1.57GB eta 1.50h
+  stage1 gradient check: True
+[main] stage1 upd 25/4500 loss 3.9008 lr 2.21e-04 gn 32.69 1.17s/upd mem 1.60GB eta 1.45h
+[main] stage1 upd 50/4500 loss 3.2093 lr 4.42e-04 gn 14.10 1.16s/upd mem 1.66GB eta 1.43h
+[main] stage1 upd 75/4500 loss 3.5122 lr 6.64e-04 gn 3.09 1.15s/upd mem 1.66GB eta 1.42h
+[main] stage1 upd 100/4500 loss 3.5043 lr 8.85e-04 gn 1.75 1.16s/upd mem 1.66GB eta 1.42h
+[main] stage1 upd 125/4500 loss 2.9619 lr 1.00e-03 gn 1.36 1.19s/upd mem 1.66GB eta 1.45h
+[main] stage1 upd 150/4500 loss 3.1999 lr 9.99e-04 gn 1.44 1.16s/upd mem 1.66GB eta 1.40h
+[main] stage1 upd 175/4500 loss 3.0890 lr 9.98e-04 gn 1.39 1.15s/upd mem 1.66GB eta 1.38h
+[main] stage1 upd 200/4500 loss 3.1273 lr 9.96e-04 gn 1.19 1.16s/upd mem 1.66GB eta 1.38h
+[main] stage1 upd 225/4500 loss 2.8895 lr 9.94e-04 gn 0.78 1.20s/upd mem 1.66GB eta 1.42h
+[main] stage1 upd 250/4500 loss 2.9710 lr 9.91e-04 gn 0.89 1.15s/upd mem 1.66GB eta 1.36h
+[main] stage1 upd 275/4500 loss 2.6957 lr 9.87e-04 gn 0.78 1.15s/upd mem 1.66GB eta 1.36h
+[main] stage1 upd 300/4500 loss 2.5195 lr 9.83e-04 gn 0.81 1.16s/upd mem 1.66GB eta 1.35h
+[main] stage1 upd 325/4500 loss 2.7132 lr 9.79e-04 gn 0.85 1.17s/upd mem 1.66GB eta 1.35h
+[main] stage1 upd 350/4500 loss 2.3764 lr 9.73e-04 gn 0.84 1.19s/upd mem 1.66GB eta 1.37h
+[main] stage1 upd 375/4500 loss 2.7105 lr 9.67e-04 gn 0.72 1.16s/upd mem 1.66GB eta 1.32h
+[main] stage1 upd 400/4500 loss 2.5960 lr 9.61e-04 gn 0.82 1.16s/upd mem 1.66GB eta 1.32h
+[main] stage1 upd 425/4500 loss 2.8566 lr 9.54e-04 gn 1.29 1.18s/upd mem 1.66GB eta 1.34h
+[main] stage1 upd 450/4500 loss 2.4809 lr 9.46e-04 gn 0.72 1.16s/upd mem 1.66GB eta 1.31h
+[main] stage1 upd 475/4500 loss 2.6565 lr 9.38e-04 gn 1.33 1.15s/upd mem 1.66GB eta 1.29h
+[main] stage1 upd 500/4500 loss 2.3050 lr 9.29e-04 gn 0.77 1.16s/upd mem 1.66GB eta 1.28h
+  dev@500: cap 2.760 | ground nll 2.676 swap +0.199 | vqa nll 3.424 swap +0.224 (7s)
+[main] stage1 upd 525/4500 loss 2.7375 lr 9.20e-04 gn 0.73 1.15s/upd mem 1.66GB eta 1.27h
+[main] stage1 upd 550/4500 loss 2.6955 lr 9.11e-04 gn 0.81 1.14s/upd mem 1.66GB eta 1.26h
+[main] stage1 upd 575/4500 loss 2.6089 lr 9.01e-04 gn 0.67 1.16s/upd mem 1.66GB eta 1.26h
+[main] stage1 upd 600/4500 loss 2.6258 lr 8.90e-04 gn 0.69 1.19s/upd mem 1.66GB eta 1.29h
+[main] stage1 upd 625/4500 loss 2.6231 lr 8.79e-04 gn 0.81 1.15s/upd mem 1.66GB eta 1.24h
+[main] stage1 upd 650/4500 loss 2.8149 lr 8.67e-04 gn 0.76 1.18s/upd mem 1.66GB eta 1.26h
+[main] stage1 upd 675/4500 loss 2.1787 lr 8.55e-04 gn 0.71 1.16s/upd mem 1.66GB eta 1.23h
+[main] stage1 upd 700/4500 loss 2.4530 lr 8.43e-04 gn 0.76 1.16s/upd mem 1.66GB eta 1.22h
+[main] stage1 upd 725/4500 loss 2.6315 lr 8.30e-04 gn 0.82 1.15s/upd mem 1.66GB eta 1.20h
+[main] stage1 upd 750/4500 loss 2.3934 lr 8.17e-04 gn 0.62 1.18s/upd mem 1.66GB eta 1.23h
+[main] stage1 upd 775/4500 loss 2.3960 lr 8.04e-04 gn 0.66 1.16s/upd mem 1.66GB eta 1.20h
+[main] stage1 upd 800/4500 loss 2.1481 lr 7.90e-04 gn 0.61 1.16s/upd mem 1.66GB eta 1.20h
+[main] stage1 upd 825/4500 loss 2.3910 lr 7.76e-04 gn 0.66 1.17s/upd mem 1.66GB eta 1.19h
+[main] stage1 upd 850/4500 loss 2.0512 lr 7.61e-04 gn 0.59 1.15s/upd mem 1.66GB eta 1.17h
+[main] stage1 upd 875/4500 loss 2.3488 lr 7.47e-04 gn 0.67 1.15s/upd mem 1.66GB eta 1.16h
+[main] stage1 upd 900/4500 loss 2.4012 lr 7.32e-04 gn 0.92 1.15s/upd mem 1.66GB eta 1.15h
+[main] stage1 upd 925/4500 loss 2.6804 lr 7.16e-04 gn 0.84 1.17s/upd mem 1.66GB eta 1.16h
+[main] stage1 upd 950/4500 loss 2.5780 lr 7.01e-04 gn 0.80 1.16s/upd mem 1.66GB eta 1.15h
+[main] stage1 upd 975/4500 loss 2.5501 lr 6.85e-04 gn 0.83 1.16s/upd mem 1.66GB eta 1.14h
+[main] stage1 upd 1000/4500 loss 2.4814 lr 6.69e-04 gn 0.62 1.15s/upd mem 1.66GB eta 1.11h
+  dev@1000: cap 2.515 | ground nll 4.624 swap +0.226 | vqa nll 5.169 swap +0.248 (7s)
+[main] stage1 upd 1025/4500 loss 2.6364 lr 6.53e-04 gn 0.65 1.16s/upd mem 1.66GB eta 1.12h
+[main] stage1 upd 1050/4500 loss 2.4679 lr 6.37e-04 gn 0.72 1.20s/upd mem 1.66GB eta 1.15h
+[main] stage1 upd 1075/4500 loss 1.9984 lr 6.21e-04 gn 0.55 1.16s/upd mem 1.66GB eta 1.10h
+[main] stage1 upd 1100/4500 loss 2.7782 lr 6.04e-04 gn 0.84 1.17s/upd mem 1.66GB eta 1.10h
+[main] stage1 upd 1125/4500 loss 2.7356 lr 5.88e-04 gn 0.69 1.16s/upd mem 1.66GB eta 1.08h
+[main] stage1 upd 1150/4500 loss 2.2256 lr 5.71e-04 gn 0.63 1.15s/upd mem 1.66GB eta 1.07h
+[main] stage1 upd 1175/4500 loss 2.2632 lr 5.55e-04 gn 0.75 1.15s/upd mem 1.66GB eta 1.07h
+[main] stage1 upd 1200/4500 loss 2.1250 lr 5.38e-04 gn 0.75 1.16s/upd mem 1.66GB eta 1.06h
+[main] stage1 upd 1225/4500 loss 2.3400 lr 5.22e-04 gn 0.78 1.15s/upd mem 1.66GB eta 1.04h
+[main] stage1 upd 1250/4500 loss 2.5307 lr 5.05e-04 gn 0.79 1.16s/upd mem 1.66GB eta 1.05h
+[main] stage1 upd 1275/4500 loss 2.1629 lr 4.89e-04 gn 0.79 1.17s/upd mem 1.66GB eta 1.05h
+[main] stage1 upd 1300/4500 loss 2.0879 lr 4.73e-04 gn 0.67 1.16s/upd mem 1.66GB eta 1.03h
+[main] stage1 upd 1325/4500 loss 2.2562 lr 4.56e-04 gn 0.75 1.18s/upd mem 1.66GB eta 1.04h
+[main] stage1 upd 1350/4500 loss 2.0873 lr 4.40e-04 gn 0.73 1.14s/upd mem 1.66GB eta 1.00h
+[main] stage1 upd 1375/4500 loss 2.6024 lr 4.24e-04 gn 0.67 1.16s/upd mem 1.66GB eta 1.01h
+[main] stage1 upd 1400/4500 loss 2.2077 lr 4.09e-04 gn 0.79 1.18s/upd mem 1.66GB eta 1.01h
+[main] stage1 upd 1425/4500 loss 2.3351 lr 3.93e-04 gn 0.77 1.15s/upd mem 1.66GB eta 0.98h
+[main] stage1 upd 1450/4500 loss 2.5417 lr 3.78e-04 gn 0.81 1.15s/upd mem 1.66GB eta 0.97h
+[main] stage1 upd 1475/4500 loss 2.2010 lr 3.62e-04 gn 0.69 1.16s/upd mem 1.66GB eta 0.97h
+[main] stage1 upd 1500/4500 loss 2.5944 lr 3.48e-04 gn 0.74 1.15s/upd mem 1.66GB eta 0.95h
+  dev@1500: cap 2.448 | ground nll 5.833 swap +0.222 | vqa nll 5.924 swap +0.365 (7s)
+[main] stage1 upd 1525/4500 loss 1.9952 lr 3.33e-04 gn 0.72 1.15s/upd mem 1.66GB eta 0.95h
+[main] stage1 upd 1550/4500 loss 2.3562 lr 3.19e-04 gn 0.82 1.16s/upd mem 1.66GB eta 0.95h
+[main] stage1 upd 1575/4500 loss 2.2056 lr 3.05e-04 gn 0.67 1.15s/upd mem 1.66GB eta 0.94h
+[main] stage1 upd 1600/4500 loss 2.2170 lr 2.91e-04 gn 0.71 1.16s/upd mem 1.66GB eta 0.93h
+[main] stage1 upd 1625/4500 loss 2.5000 lr 2.77e-04 gn 0.75 1.15s/upd mem 1.66GB eta 0.92h
+[main] stage1 upd 1650/4500 loss 2.0854 lr 2.65e-04 gn 0.71 1.16s/upd mem 1.66GB eta 0.92h
+[main] stage1 upd 1675/4500 loss 2.1922 lr 2.52e-04 gn 0.77 1.15s/upd mem 1.66GB eta 0.90h
+[main] stage1 upd 1700/4500 loss 2.1348 lr 2.40e-04 gn 0.90 1.19s/upd mem 1.66GB eta 0.92h
+[main] stage1 upd 1725/4500 loss 2.2963 lr 2.28e-04 gn 0.78 1.14s/upd mem 1.66GB eta 0.88h
+[main] stage1 upd 1750/4500 loss 2.0404 lr 2.17e-04 gn 0.88 1.15s/upd mem 1.66GB eta 0.88h
+[main] stage1 upd 1775/4500 loss 2.0525 lr 2.06e-04 gn 0.79 1.16s/upd mem 1.66GB eta 0.88h
+[main] stage1 upd 1800/4500 loss 2.0243 lr 1.95e-04 gn 0.80 1.16s/upd mem 1.66GB eta 0.87h
+[main] stage1 upd 1825/4500 loss 2.3892 lr 1.85e-04 gn 0.82 1.16s/upd mem 1.66GB eta 0.86h
+[main] stage1 upd 1850/4500 loss 1.8368 lr 1.76e-04 gn 0.82 1.15s/upd mem 1.66GB eta 0.85h
+[main] stage1 upd 1875/4500 loss 2.4432 lr 1.67e-04 gn 0.79 1.17s/upd mem 1.66GB eta 0.85h
+[main] stage1 upd 1900/4500 loss 2.2371 lr 1.59e-04 gn 0.77 1.15s/upd mem 1.66GB eta 0.83h
+[main] stage1 upd 1925/4500 loss 2.1254 lr 1.51e-04 gn 0.73 1.16s/upd mem 1.66GB eta 0.83h
+[main] stage1 upd 1950/4500 loss 2.0148 lr 1.43e-04 gn 0.78 1.15s/upd mem 1.66GB eta 0.82h
+[main] stage1 upd 1975/4500 loss 2.6314 lr 1.37e-04 gn 0.81 1.16s/upd mem 1.66GB eta 0.82h
+[main] stage1 upd 2000/4500 loss 2.5810 lr 1.30e-04 gn 0.91 1.19s/upd mem 1.66GB eta 0.83h
+  dev@2000: cap 2.408 | ground nll 7.288 swap +0.107 | vqa nll 7.059 swap +0.366 (7s)
+[main] stage1 upd 2025/4500 loss 2.2167 lr 1.25e-04 gn 0.89 1.16s/upd mem 1.66GB eta 0.80h
+[main] stage1 upd 2050/4500 loss 2.1897 lr 1.20e-04 gn 0.90 1.16s/upd mem 1.66GB eta 0.79h
+[main] stage1 upd 2075/4500 loss 2.1285 lr 1.15e-04 gn 0.69 1.16s/upd mem 1.66GB eta 0.78h
+[main] stage1 upd 2100/4500 loss 2.5480 lr 1.11e-04 gn 0.77 1.15s/upd mem 1.66GB eta 0.77h
+[main] stage1 upd 2125/4500 loss 2.0818 lr 1.08e-04 gn 0.81 1.15s/upd mem 1.66GB eta 0.76h
+[main] stage1 upd 2150/4500 loss 1.9301 lr 1.05e-04 gn 0.82 1.15s/upd mem 1.66GB eta 0.75h
+[main] stage1 upd 2175/4500 loss 2.3272 lr 1.03e-04 gn 0.71 1.17s/upd mem 1.66GB eta 0.75h
+[main] stage1 upd 2200/4500 loss 2.3066 lr 1.01e-04 gn 0.82 1.15s/upd mem 1.66GB eta 0.74h
+[main] stage1 upd 2225/4500 loss 2.5368 lr 1.00e-04 gn 0.80 1.18s/upd mem 1.66GB eta 0.74h
+[main] stage1 upd 2250/4500 loss 2.1167 lr 1.00e-04 gn 0.83 1.15s/upd mem 1.66GB eta 0.72h
+  dev@2250: cap 2.392 | ground nll 6.628 swap +0.160 | vqa nll 6.739 swap +0.401 (7s)
+finished stage1 at update 2250; exported stage1.pt
+  stage2 gradient check: True
+[main] stage2 upd 2275/4500 loss 1.5689 lr 3.33e-05 gn 20.30 1.32s/upd mem 1.67GB eta 0.81h
+[main] stage2 upd 2300/4500 loss 0.9434 lr 6.67e-05 gn 3.37 1.30s/upd mem 1.67GB eta 0.80h
+[main] stage2 upd 2325/4500 loss 1.4060 lr 1.00e-04 gn 11.30 1.32s/upd mem 1.67GB eta 0.80h
+[main] stage2 upd 2350/4500 loss 0.5016 lr 9.99e-05 gn 4.31 1.30s/upd mem 1.67GB eta 0.77h
+[main] stage2 upd 2375/4500 loss 0.9781 lr 9.97e-05 gn 2.39 1.29s/upd mem 1.67GB eta 0.76h
+[main] stage2 upd 2400/4500 loss 1.1671 lr 9.94e-05 gn 3.93 1.33s/upd mem 1.67GB eta 0.77h
+[main] stage2 upd 2425/4500 loss 1.1610 lr 9.89e-05 gn 5.46 1.32s/upd mem 1.67GB eta 0.76h
+[main] stage2 upd 2450/4500 loss 0.5820 lr 9.83e-05 gn 1.92 1.30s/upd mem 1.67GB eta 0.74h
+[main] stage2 upd 2475/4500 loss 0.6546 lr 9.76e-05 gn 2.77 1.31s/upd mem 1.67GB eta 0.74h
+[main] stage2 upd 2500/4500 loss 0.6031 lr 9.67e-05 gn 6.63 1.30s/upd mem 1.67GB eta 0.72h
+  dev@2500: cap 2.413 | ground nll 0.785 swap +2.764 | vqa nll 1.957 swap +0.966 (8s)
+[main] stage2 upd 2525/4500 loss 0.5681 lr 9.57e-05 gn 2.65 1.30s/upd mem 1.67GB eta 0.71h
+[main] stage2 upd 2550/4500 loss 0.5850 lr 9.46e-05 gn 3.17 1.31s/upd mem 1.67GB eta 0.71h
+[main] stage2 upd 2575/4500 loss 0.6055 lr 9.34e-05 gn 1.39 1.29s/upd mem 1.67GB eta 0.69h
+[main] stage2 upd 2600/4500 loss 0.6917 lr 9.20e-05 gn 3.48 1.31s/upd mem 1.67GB eta 0.69h
+[main] stage2 upd 2625/4500 loss 0.7103 lr 9.06e-05 gn 3.33 1.49s/upd mem 1.67GB eta 0.78h
+[main] stage2 upd 2650/4500 loss 0.2899 lr 8.90e-05 gn 7.12 1.29s/upd mem 1.67GB eta 0.66h
+[main] stage2 upd 2675/4500 loss 0.6911 lr 8.73e-05 gn 4.24 1.31s/upd mem 1.67GB eta 0.66h
+[main] stage2 upd 2700/4500 loss 1.0762 lr 8.56e-05 gn 6.28 1.29s/upd mem 1.67GB eta 0.65h
+[main] stage2 upd 2725/4500 loss 1.1354 lr 8.37e-05 gn 3.76 1.30s/upd mem 1.68GB eta 0.64h
+[main] stage2 upd 2750/4500 loss 0.0752 lr 8.17e-05 gn 1.98 1.29s/upd mem 1.68GB eta 0.63h
+[main] stage2 upd 2775/4500 loss 0.2640 lr 7.97e-05 gn 4.69 1.29s/upd mem 1.68GB eta 0.62h
+[main] stage2 upd 2800/4500 loss 0.6860 lr 7.76e-05 gn 2.85 1.29s/upd mem 1.68GB eta 0.61h
+[main] stage2 upd 2825/4500 loss 0.6980 lr 7.54e-05 gn 3.48 1.29s/upd mem 1.68GB eta 0.60h
+[main] stage2 upd 2850/4500 loss 0.6323 lr 7.32e-05 gn 1.58 1.31s/upd mem 1.68GB eta 0.60h
+[main] stage2 upd 2875/4500 loss 1.0635 lr 7.09e-05 gn 4.58 1.30s/upd mem 1.68GB eta 0.58h
+[main] stage2 upd 2900/4500 loss 1.0853 lr 6.85e-05 gn 2.68 1.30s/upd mem 1.68GB eta 0.58h
+[main] stage2 upd 2925/4500 loss 0.4835 lr 6.61e-05 gn 2.12 1.30s/upd mem 1.68GB eta 0.57h
+[main] stage2 upd 2950/4500 loss 0.5410 lr 6.37e-05 gn 5.35 1.48s/upd mem 1.68GB eta 0.64h
+[main] stage2 upd 2975/4500 loss 0.8034 lr 6.13e-05 gn 2.81 1.29s/upd mem 1.68GB eta 0.55h
+[main] stage2 upd 3000/4500 loss 0.2704 lr 5.88e-05 gn 2.49 1.29s/upd mem 1.68GB eta 0.54h
+  dev@3000: cap 2.398 | ground nll 0.842 swap +3.921 | vqa nll 2.368 swap +0.920 (8s)
+[main] stage2 upd 3025/4500 loss 0.7780 lr 5.63e-05 gn 1.35 1.35s/upd mem 1.68GB eta 0.55h
+[main] stage2 upd 3050/4500 loss 0.3337 lr 5.39e-05 gn 5.80 1.30s/upd mem 1.68GB eta 0.52h
+[main] stage2 upd 3075/4500 loss 0.7405 lr 5.14e-05 gn 9.92 1.29s/upd mem 1.68GB eta 0.51h
+[main] stage2 upd 3100/4500 loss 0.4317 lr 4.89e-05 gn 4.01 1.29s/upd mem 1.68GB eta 0.50h
+[main] stage2 upd 3125/4500 loss 1.0568 lr 4.65e-05 gn 1.96 1.29s/upd mem 1.68GB eta 0.49h
+[main] stage2 upd 3150/4500 loss 0.4736 lr 4.40e-05 gn 2.17 1.30s/upd mem 1.68GB eta 0.49h
+[main] stage2 upd 3175/4500 loss 0.3063 lr 4.17e-05 gn 1.14 1.29s/upd mem 1.68GB eta 0.48h
+[main] stage2 upd 3200/4500 loss 0.3143 lr 3.93e-05 gn 3.68 1.48s/upd mem 1.68GB eta 0.53h
+[main] stage2 upd 3225/4500 loss 0.2330 lr 3.70e-05 gn 8.41 1.48s/upd mem 1.68GB eta 0.53h
+[main] stage2 upd 3250/4500 loss 0.5792 lr 3.48e-05 gn 3.12 1.29s/upd mem 1.68GB eta 0.45h
+[main] stage2 upd 3275/4500 loss 0.4633 lr 3.26e-05 gn 3.45 1.30s/upd mem 1.68GB eta 0.44h
+[main] stage2 upd 3300/4500 loss 0.9320 lr 3.05e-05 gn 2.38 1.29s/upd mem 1.68GB eta 0.43h
+[main] stage2 upd 3325/4500 loss 1.4576 lr 2.84e-05 gn 2.87 1.30s/upd mem 1.68GB eta 0.42h
+[main] stage2 upd 3350/4500 loss 0.4383 lr 2.65e-05 gn 2.35 1.48s/upd mem 1.68GB eta 0.47h
+[main] stage2 upd 3375/4500 loss 0.8335 lr 2.46e-05 gn 2.77 1.30s/upd mem 1.68GB eta 0.41h
+[main] stage2 upd 3400/4500 loss 0.5758 lr 2.28e-05 gn 7.25 1.48s/upd mem 1.68GB eta 0.45h
+[main] stage2 upd 3425/4500 loss 0.3672 lr 2.11e-05 gn 2.32 1.30s/upd mem 1.68GB eta 0.39h
+[main] stage2 upd 3450/4500 loss 0.4475 lr 1.95e-05 gn 1.09 1.30s/upd mem 1.68GB eta 0.38h
+[main] stage2 upd 3475/4500 loss 0.7678 lr 1.81e-05 gn 3.59 1.29s/upd mem 1.68GB eta 0.37h
+[main] stage2 upd 3500/4500 loss 0.5033 lr 1.67e-05 gn 1.59 1.30s/upd mem 1.68GB eta 0.36h
+  dev@3500: cap 2.398 | ground nll 0.998 swap +4.279 | vqa nll 2.513 swap +0.943 (8s)
+[main] stage2 upd 3525/4500 loss 0.5388 lr 1.55e-05 gn 4.73 1.30s/upd mem 1.68GB eta 0.35h
+[main] stage2 upd 3550/4500 loss 1.2223 lr 1.43e-05 gn 3.02 1.31s/upd mem 1.68GB eta 0.35h
+[main] stage2 upd 3575/4500 loss 0.9268 lr 1.33e-05 gn 6.00 1.30s/upd mem 1.68GB eta 0.33h
+[main] stage2 upd 3600/4500 loss 0.3980 lr 1.25e-05 gn 6.55 1.29s/upd mem 1.68GB eta 0.32h
+[main] stage2 upd 3625/4500 loss 0.3984 lr 1.17e-05 gn 5.51 1.29s/upd mem 1.68GB eta 0.31h
+[main] stage2 upd 3650/4500 loss 0.8083 lr 1.11e-05 gn 12.69 1.29s/upd mem 1.68GB eta 0.31h
+[main] stage2 upd 3675/4500 loss 0.7553 lr 1.06e-05 gn 11.05 1.31s/upd mem 1.68GB eta 0.30h
+[main] stage2 upd 3700/4500 loss 0.8548 lr 1.03e-05 gn 6.14 1.30s/upd mem 1.68GB eta 0.29h
+[main] stage2 upd 3725/4500 loss 0.2899 lr 1.01e-05 gn 3.25 1.29s/upd mem 1.68GB eta 0.28h
+[main] stage2 upd 3750/4500 loss 0.6545 lr 1.00e-05 gn 2.49 1.67s/upd mem 1.68GB eta 0.35h
+  dev@3750: cap 2.396 | ground nll 1.072 swap +4.580 | vqa nll 2.580 swap +0.952 (8s)
+finished stage2 at update 3750; exported stage2.pt
+  stage3 gradient check: True
+[main] stage3 upd 3775/4500 loss 0.5355 lr 3.29e-05 gn 4.39 1.29s/upd mem 1.62GB eta 0.26h
+[main] stage3 upd 3800/4500 loss 0.7280 lr 5.00e-05 gn 8.26 1.29s/upd mem 1.67GB eta 0.25h
+[main] stage3 upd 3825/4500 loss 1.0202 lr 4.97e-05 gn 4.94 1.30s/upd mem 1.67GB eta 0.24h
+[main] stage3 upd 3850/4500 loss 1.4160 lr 4.92e-05 gn 8.09 1.29s/upd mem 1.67GB eta 0.23h
+[main] stage3 upd 3875/4500 loss 0.5078 lr 4.84e-05 gn 3.08 1.29s/upd mem 1.67GB eta 0.22h
+[main] stage3 upd 3900/4500 loss 1.5580 lr 4.74e-05 gn 6.09 1.31s/upd mem 1.67GB eta 0.22h
+[main] stage3 upd 3925/4500 loss 0.9663 lr 4.61e-05 gn 5.97 1.30s/upd mem 1.67GB eta 0.21h
+[main] stage3 upd 3950/4500 loss 0.2104 lr 4.46e-05 gn 2.88 1.30s/upd mem 1.67GB eta 0.20h
+[main] stage3 upd 3975/4500 loss 0.5777 lr 4.28e-05 gn 2.61 1.29s/upd mem 1.67GB eta 0.19h
+[main] stage3 upd 4000/4500 loss 0.9014 lr 4.09e-05 gn 4.25 1.30s/upd mem 1.67GB eta 0.18h
+  dev@4000: cap 2.404 | ground nll 0.744 swap +2.675 | vqa nll 1.469 swap +0.859 (8s)
+[main] stage3 upd 4025/4500 loss 0.8722 lr 3.89e-05 gn 5.14 1.29s/upd mem 1.67GB eta 0.17h
+[main] stage3 upd 4050/4500 loss 0.8295 lr 3.67e-05 gn 7.46 1.30s/upd mem 1.67GB eta 0.16h
+[main] stage3 upd 4075/4500 loss 1.1807 lr 3.43e-05 gn 5.54 1.30s/upd mem 1.68GB eta 0.15h
+[main] stage3 upd 4100/4500 loss 0.8804 lr 3.19e-05 gn 4.09 1.30s/upd mem 1.68GB eta 0.14h
+[main] stage3 upd 4125/4500 loss 0.5856 lr 2.95e-05 gn 2.39 1.30s/upd mem 1.68GB eta 0.14h
+[main] stage3 upd 4150/4500 loss 0.3712 lr 2.70e-05 gn 3.93 1.29s/upd mem 1.68GB eta 0.13h
+[main] stage3 upd 4175/4500 loss 0.3549 lr 2.45e-05 gn 4.19 1.30s/upd mem 1.68GB eta 0.12h
+[main] stage3 upd 4200/4500 loss 1.0077 lr 2.21e-05 gn 5.01 1.30s/upd mem 1.68GB eta 0.11h
+[main] stage3 upd 4225/4500 loss 0.7991 lr 1.97e-05 gn 3.35 1.29s/upd mem 1.68GB eta 0.10h
+[main] stage3 upd 4250/4500 loss 0.5438 lr 1.74e-05 gn 7.03 1.29s/upd mem 1.68GB eta 0.09h
+[main] stage3 upd 4275/4500 loss 0.9362 lr 1.53e-05 gn 4.99 1.30s/upd mem 1.68GB eta 0.08h
+[main] stage3 upd 4300/4500 loss 0.5020 lr 1.33e-05 gn 7.22 1.30s/upd mem 1.68GB eta 0.07h
+[main] stage3 upd 4325/4500 loss 0.5970 lr 1.15e-05 gn 3.40 1.30s/upd mem 1.68GB eta 0.06h
+[main] stage3 upd 4350/4500 loss 0.3729 lr 9.81e-06 gn 3.74 1.30s/upd mem 1.68GB eta 0.05h
+[main] stage3 upd 4375/4500 loss 1.5310 lr 8.39e-06 gn 5.73 1.32s/upd mem 1.68GB eta 0.05h
+[main] stage3 upd 4400/4500 loss 0.9405 lr 7.20e-06 gn 6.38 1.30s/upd mem 1.68GB eta 0.04h
+[main] stage3 upd 4425/4500 loss 0.2849 lr 6.25e-06 gn 3.97 1.30s/upd mem 1.68GB eta 0.03h
+[main] stage3 upd 4450/4500 loss 0.7398 lr 5.57e-06 gn 4.61 1.31s/upd mem 1.68GB eta 0.02h
+[main] stage3 upd 4475/4500 loss 0.3995 lr 5.15e-06 gn 6.63 1.31s/upd mem 1.68GB eta 0.01h
+[main] stage3 upd 4500/4500 loss 0.4394 lr 5.00e-06 gn 4.32 1.31s/upd mem 1.68GB eta 0.00h
+  dev@4500: cap 2.419 | ground nll 0.783 swap +3.294 | vqa nll 1.477 swap +1.025 (8s)
+finished stage3 at update 4500; exported stage3.pt
+{
+ "run": "main",
+ "updates": 4500,
+ "sessions": 1,
+ "calibration": {
+  "rule": "s = mean ||e_text|| / mean ||g_phi(F)|| at initialization, on one caption example for each of 512 training images (text: their prompt + caption tokens; visual: their 196 tokens)",
+  "n_examples": 512,
+  "n_text_tokens": 16879,
+  "text_token_norm": 0.8031363487243652,
+  "visual_token_norm_before": 15.91812801361084,
+  "scale": 0.05045419587263284
+ },
+ "stages": {
+  "stage1": {
+   "trainable_connector": 1837056,
+   "trainable_lora": 0,
+   "frozen_lm": 596049920,
+   "only_connector_and_lora_trainable": true,
+   "train_time_s": 2617.3571991789845,
+   "peak_gpu_mem_allocated_bytes": 1664034816,
+   "updates": 2250,
+   "export_bytes": 7350734
+  },
+  "stage2": {
+   "trainable_connector": 1837056,
+   "trainable_lora": 4587520,
+   "frozen_lm": 596049920,
+   "only_connector_and_lora_trainable": true,
+   "train_time_s": 1988.290264728027,
+   "peak_gpu_mem_allocated_bytes": 1676945408,
+   "updates": 1500,
+   "export_bytes": 25765386
+  },
+  "stage3": {
+   "trainable_connector": 1837056,
+   "trainable_lora": 4587520,
+   "frozen_lm": 596049920,
+   "only_connector_and_lora_trainable": true,
+   "train_time_s": 981.753696618005,
+   "peak_gpu_mem_allocated_bytes": 1676945408,
+   "updates": 750,
+   "export_bytes": 25765386
+  }
+ },
+ "mixture_draws": {
+  "stage1": {
+   "caption": 18000
+  },
+  "stage2": {
+   "counting": 2968,
+   "presence": 5974,
+   "caption": 3058
+  },
+  "stage3": {
+   "vqa": 4231,
+   "presence": 549,
+   "caption": 629,
+   "counting": 591
+  }
+ },
+ "mixture_examples": {
+  "stage1": {
+   "caption": 36000
+  },
+  "stage2": {
+   "counting": 5936,
+   "presence": 11948,
+   "caption_replay": 6116
+  },
+  "stage3": {
+   "vqa": 8462,
+   "presence": 1098,
+   "caption_replay": 1258,
+   "counting": 1182
+  }
+ },
+ "train_time_s": 5587.401160525016,
+ "dev_eval_time_s": 87.24117821300001,
+ "checkpoint_time_s": 1.484681811999053,
+ "skipped_updates": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "gpu": "Tesla T4"
+}

@@ -1,0 +1,12 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793740708.955010     234 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+grounding correct       acc  66.4  nll 0.980  34 ms/answer
+grounding complementary acc  13.3  nll 3.820  34 ms/answer
+grounding mismatched    acc  37.5  nll 2.356  34 ms/answer
+grounding no_image      acc  38.3  nll 1.596  22 ms/answer
+vqa       correct       acc  55.4  nll 1.467  41 ms/answer
+vqa       complementary acc  29.2  nll 2.677  39 ms/answer
+vqa       mismatched    acc  35.8  nll 2.454  38 ms/answer
+vqa       no_image      acc  30.9  nll 2.769  22 ms/answer
+wrote /kaggle/working/outputs/task2/runs/main/eval/stage3
